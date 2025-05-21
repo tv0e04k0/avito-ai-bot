@@ -14,4 +14,6 @@ def get_avito_token(client_id, client_secret):
     print("Ответ от Avito API:", response.status_code, response.text)
 
     # Пробуем вернуть токен
-    return response.json()["access_token"]
+    print("Ответ от Avito API:", response.status_code, response.text)  # Показываем ошибку
+raise Exception("Не удалось получить access_token")
+
