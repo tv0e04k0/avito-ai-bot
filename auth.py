@@ -9,5 +9,9 @@ def get_avito_token(client_id, client_secret):
         "client_secret": client_secret
     }
     response = requests.post(url, headers=headers, data=data)
-    response.raise_for_status()
+
+    # Выводим ответ полностью в лог, чтобы увидеть ошибку
+    print("Ответ от Avito API:", response.status_code, response.text)
+
+    # Пробуем вернуть токен
     return response.json()["access_token"]
